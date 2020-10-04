@@ -12,60 +12,34 @@ body {
   height: 95%;
 }
 
+.sidebar, .content, .footer {
+  padding: 15px;
+}
+
+.content, .sidebar {
+  margin: 30px;
+}
 .container {
-  margin: 1%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1vw;
+}
+
+.sidebar {
+  grid-column: span 4;
   background-color: #fff;
   border: 1px solid #e7e8ec;
-  border-radius: 4px;
-  margin-left: 25%;
-  min-width: 100px;
-  width: 70%;
-  min-height: 785px;
-  height: auto;
-}
-
-.content {
-  margin: 30px;
-  font-family: 'trebuchet ms';
-}
-
-.content h1, h2 {
-  color: #2a5885;
-}
-
-.content h1 {
-  text-align: center;
-}
-
-.content p {
-  font-size: 16pt;
-  line-height: 1.5;
-  /* color: */
-}
-
-.sidebar  {
-    width: auto;
-    height: auto;
-    background-color: #fff;
-    float: left;
-    border: 1px solid #e7e8ec;
-    border-radius: 5px;
-    margin-left: 2%;
+  border-radius: 5px;
 }
 
 .sidebar li {
   list-style-type: none;
-}
-
-.sidebar ul {
-  margin-left: 10px;
-  padding-left: 0;
+  margin: 10px;
 }
 
 .sidebar-item {
   font-family: 'comic sans ms';
-  padding: 10px;
-  font-size: 14pt;
+  font-size: 18pt;
   color: #2a5885;
 }
 
@@ -78,26 +52,64 @@ body {
   color: #555555;
 }
 
-footer {
-  position: absolute;
-  min-height: 120px;
-  width: 90%;
-  left: 5%;
-  border-top: 1px solid #c1c1c1;
-  background-color: #edeef0;
-  padding: 0px;
-  margin: 0;
+.content {
+  grid-column: span 8;
+  min-height: 75vh;
+  height: auto;
+  font-family: 'trebuchet ms';
+  background-color: #fff;
+  border: 1px solid #e7e8ec;
+  border-radius: 4px;
+  border: 1px solid #e7e8ec;
+  border-radius: 4px;
 }
 
-footer p {
+.content h1, .content h2 {
+  color: #2a5885;
+}
+
+.content h1 {
+  text-align: center;
+}
+
+.content p {
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+.footer {
+  grid-column: span 10;
+  border-top: 1px solid #c1c1c1;
+  background-color: #edeef0;
+  margin-left: 15%;
+}
+
+.footer img {
+  height: 80px;
+  float: left;
+}
+
+.footer p {
   padding: 5px;
-  text-align: right;
+  float: right;
   color: #2a5885;
   font-family: 'monospace';
 }
 
-footer img {
-  float: left;
-  height: 80px;
-  padding: 20px;
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    grid-column: span 12;
+    text-align: left;
+    column-count: 2;
+  }
+
+  .sidebar li {
+    height: 60px;
+    margin: 0;
+    font-size: 16pt;
+  }
+
+  .content {
+    grid-column: span 12;
+  }
 }
